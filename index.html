@@ -1,60 +1,121 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Большая желтая кнопка</title>
     <style>
         .yellow-button {
-            display: inline-block; /* Позволяет задать ширину и высоту */
-            padding: 15px 30px; /* Поля вокруг текста */
-            background-color: yellow; /* Цвет фона */
-            color: black; /* Цвет текста */
-            text-align: center; /* Центрировать текст */
-            font-size: 20px; /* Размер шрифта */
-            text-decoration: none; /* Убирает подчеркивание */
-            border: none; /* Убираем границу */
-            border-radius: 35px; /* Закругляем углы */
-            transition: background-color 0.3s; /* Плавный переход цвета фона */
+            display: inline-block;
+            /* Позволяет задать ширину и высоту */
+            padding: 15px 30px;
+            /* Поля вокруг текста */
+            background-color: yellow;
+            /* Цвет фона */
+            color: black;
+            /* Цвет текста */
+            text-align: center;
+            /* Центрировать текст */
+            font-size: 20px;
+            /* Размер шрифта */
+            text-decoration: none;
+            /* Убирает подчеркивание */
+            border: none;
+            /* Убираем границу */
+            border-radius: 35px;
+            /* Закругляем углы */
+            transition: background-color 0.3s;
+            /* Плавный переход цвета фона */
             font-family: sans-serif;
-            margin-top: 115px;
+            margin-top: 50px;
         }
+
         .a {
             padding-top: 40px;
         }
 
         .yellow-button:hover {
-            background-color: #F5E027; /* Изменение цвета фона при наведении */
+            background-color: #F5E027;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .item {
+            border: 1px solid #ccc;
         }
     </style>
 </head>
-<body>
 
+<body>
+    <h1>
+        Обычный диплинк
+    </h1>
     <a href="https://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">All</a>
     <br>
-    <a href="worknest://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">OfficeCapital</a>
-    <br>
-        <a href="treasure://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">Treasure</a>
-    <br>
-    <a href="portfolio://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">Portfolio</a>
-    <br>
-        <a href="tropicaltime://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">Tropical Time (T-Time)</a>
-    <br>
-    <a href="yourstrategy://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">Твоя Стратегия</a>
-    <br>
-        <a href="sweatassets://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">SweatAssets</a>
-    <br>
-    <a href="beanvest://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">Beanvest</a>
-    <br>
-        <a href="cozynest://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">CozyNest</a>
-    <br>
-    <a href="knightsmove://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">Шах и Мат</a>
-    <br>
-        <a href="geargo://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">GearGo</a>
-    <br>
-    <a href="tastetable://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">TasteTable</a>
-    <br>
-        <a href="youryard://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">YourYard</a>
-    <br>
+    <h1>
+        Уникальные диплинки
+    </h1>
+    <div class="container">
+        <div class="item">
+            <a href="worknest://www.tbank.ru/invest/projects?projectId=tournament"
+                class="yellow-button">OfficeCapital</a>
+
+        </div>
+        <div class="item">
+            <a href="treasure://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">Treasure</a>
+
+        </div>
+        <div class="item">
+            <a href="portfolio://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">Portfolio</a>
+
+        </div>
+        <div class="item">
+            <a href="tropicaltime://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">Tropical
+                Time (T-Time)</a>
+
+        </div>
+        <div class="item">
+            <a href="yourstrategy://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">Твоя
+                Стратегия</a>
+
+        </div>
+        <div class="item">
+            <a href="sweatassets://www.tbank.ru/invest/projects?projectId=tournament"
+                class="yellow-button">SweatAssets</a>
+
+        </div>
+        <div class="item">
+            <a href="beanvest://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">Beanvest</a>
+
+        </div>
+        <div class="item">
+            <a href="cozynest://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">CozyNest</a>
+
+        </div>
+        <div class="item">
+            <a href="knightsmove://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">Шах и
+                Мат</a>
+
+        </div>
+        <div class="item">
+            <a href="geargo://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">GearGo</a>
+
+        </div>
+        <div class="item">
+            <a href="tastetable://www.tbank.ru/invest/projects?projectId=tournament"
+                class="yellow-button">TasteTable</a>
+
+        </div>
+        <div class="item">
+            <a href="youryard://www.tbank.ru/invest/projects?projectId=tournament" class="yellow-button">YourYard</a>
+
+        </div>
+    </div>
+
 </body>
+
 </html>
