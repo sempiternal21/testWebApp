@@ -43,25 +43,44 @@
 <body>
     <script>
         alert("1");
-        function tryOpenApp(deepLink) {
-  const appURL = deepLink; // Например: myapp://open/somecontent
-  const fallbackURL = 'https://www.tbank.ru/invest/projects?projectId=tournament'; // Ссылка на App Store или веб-версию
 
-  const timeout = setTimeout(() => {
-    window.location = fallbackURL;
-  }, 1000); // Если приложение не открылось за 1 секунду — редиректим
 
-  window.location.replace(appURL);
+        function openTournamentApp() {
+  const deepLinkT1 = 'worknest://www.tbank.ru/invest/projects?projectId=tournament';
+  const deepLinkT2 = 'knightsmove://www.tbank.ru/invest/projects?projectId=tournament';
+  const fallbackURL = 'https://www.tbank.ru/invest/projects?projectId=tournament';
 
-  // Для некоторых случаев может сработать window.location.href
-  // window.location.href = appURL;
+  const tryDeepLink = (url, nextAction) => {
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.src = url;
+    document.body.appendChild(iframe);
 
-  // Защита от блокировки редиректа
-  window.addEventListener('pagehide', () => {
-    clearTimeout(timeout);
+    // Через небольшую задержку пытаемся выполнить window.location
+    setTimeout(() => {
+      try {
+        window.location.replace(url);
+      } catch (e) {
+        // Игнорируем возможные ошибки
+      }
+    }, 250);
+
+    // Через 1 секунду выполняем следующее действие (следующий диплинк или редирект)
+    setTimeout(() => {
+      document.body.removeChild(iframe);
+      nextAction();
+    }, 1000);
+  };
+
+  // Сначала пробуем t1://
+  tryDeepLink(deepLinkT1, () => {
+    // Если не сработало — пробуем t2://
+    tryDeepLink(deepLinkT2, () => {
+      // Если оба не сработали — редиректим на веб
+      window.location.replace(fallbackURL);
+    });
   });
 }
-        tryOpenApp("knightsmove://www.tbank.ru/invest/projects?projectId=tournament");
     </script>
 
     <h1>
