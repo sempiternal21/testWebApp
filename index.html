@@ -42,74 +42,83 @@
 
 <body>
     <script>
-        alert("4");
+//         alert("4");
 
 
-        function openTournamentApp() {
-  const deepLinkT1 = 'youryard://www.tbank.ru/invest/projects?projectId=tournament';
-  const deepLinkT2 = 'geargo://www.tbank.ru/invest/projects?projectId=tournament';
-  const deepLinkT3 = 'treasure://www.tbank.ru/invest/projects?projectId=tournament';
-  const deepLinkT4 = 'portfolio://www.tbank.ru/invest/projects?projectId=tournament';
-  const deepLinkT5 = 'tropicaltime://www.tbank.ru/invest/projects?projectId=tournament';
-  const deepLinkT6 = 'yourstrategy://www.tbank.ru/invest/projects?projectId=tournament';
-  const deepLinkT7 = 'sweatassets://www.tbank.ru/invest/projects?projectId=tournament';
-  const deepLinkT8 = 'beanvest://www.tbank.ru/invest/projects?projectId=tournament';
-  const deepLinkT9 = 'cozynest://www.tbank.ru/invest/projects?projectId=tournament';
-  const deepLinkT10 = 'knightsmove://www.tbank.ru/invest/projects?projectId=tournament';
-  const deepLinkT11 = 'tastetable://www.tbank.ru/invest/projects?projectId=tournament';
-  const deepLinkT12 = 'worknest://www.tbank.ru/invest/projects?projectId=tournament';
-  const fallbackURL = 'https://www.tbank.ru/invest/projects?projectId=tournament';
+//         function openTournamentApp() {
+//   const deepLinkT1 = 'youryard://www.tbank.ru/invest/projects?projectId=tournament';
+//   const deepLinkT2 = 'geargo://www.tbank.ru/invest/projects?projectId=tournament';
+//   const deepLinkT3 = 'treasure://www.tbank.ru/invest/projects?projectId=tournament';
+//   const deepLinkT4 = 'portfolio://www.tbank.ru/invest/projects?projectId=tournament';
+//   const deepLinkT5 = 'tropicaltime://www.tbank.ru/invest/projects?projectId=tournament';
+//   const deepLinkT6 = 'yourstrategy://www.tbank.ru/invest/projects?projectId=tournament';
+//   const deepLinkT7 = 'sweatassets://www.tbank.ru/invest/projects?projectId=tournament';
+//   const deepLinkT8 = 'beanvest://www.tbank.ru/invest/projects?projectId=tournament';
+//   const deepLinkT9 = 'cozynest://www.tbank.ru/invest/projects?projectId=tournament';
+//   const deepLinkT10 = 'knightsmove://www.tbank.ru/invest/projects?projectId=tournament';
+//   const deepLinkT11 = 'tastetable://www.tbank.ru/invest/projects?projectId=tournament';
+//   const deepLinkT12 = 'worknest://www.tbank.ru/invest/projects?projectId=tournament';
+//   const fallbackURL = 'https://www.tbank.ru/invest/projects?projectId=tournament';
 
-  const tryDeepLink = (url, nextAction) => {
-    const iframe = document.createElement('iframe');
-    iframe.style.display = 'none';
-    iframe.src = url;
-    document.body.appendChild(iframe);
+//   const tryDeepLink = (url, nextAction) => {
+//     const iframe = document.createElement('iframe');
+//     iframe.style.display = 'none';
+//     iframe.src = url;
+//     document.body.appendChild(iframe);
 
-    // Через небольшую задержку пытаемся выполнить window.location
-    setTimeout(() => {
-      try {
-        window.location.replace(url);
-      } catch (e) {
-        // Игнорируем возможные ошибки
-      }
-    }, 50);
+//     // Через небольшую задержку пытаемся выполнить window.location
+//     setTimeout(() => {
+//       try {
+//         window.location.replace(url);
+//       } catch (e) {
+//         // Игнорируем возможные ошибки
+//       }
+//     }, 50);
 
-    // Через 1 секунду выполняем следующее действие (следующий диплинк или редирект)
-    setTimeout(() => {
-      document.body.removeChild(iframe);
-      nextAction();
-    }, 100);
-  };
+//     // Через 1 секунду выполняем следующее действие (следующий диплинк или редирект)
+//     setTimeout(() => {
+//       document.body.removeChild(iframe);
+//       nextAction();
+//     }, 100);
+//   };
 
-  tryDeepLink(deepLinkT1, () => {
-    tryDeepLink(deepLinkT2, () => {
-      tryDeepLink(deepLinkT3, () => {
-    tryDeepLink(deepLinkT4, () => {
-      tryDeepLink(deepLinkT5, () => {
-    tryDeepLink(deepLinkT6, () => {
-      tryDeepLink(deepLinkT7, () => {
-    tryDeepLink(deepLinkT8, () => {
-      tryDeepLink(deepLinkT9, () => {
-    tryDeepLink(deepLinkT10, () => {
-      tryDeepLink(deepLinkT11, () => {
-    tryDeepLink(deepLinkT12, () => {
-      window.location.replace(fallbackURL);
-    });
-  });
-    });
-  });
-    });
-  });
-    });
-  });
-    });
-  });
-    });
-  });
-}
+//   tryDeepLink(deepLinkT1, () => {
+//     tryDeepLink(deepLinkT2, () => {
+//       tryDeepLink(deepLinkT3, () => {
+//     tryDeepLink(deepLinkT4, () => {
+//       tryDeepLink(deepLinkT5, () => {
+//     tryDeepLink(deepLinkT6, () => {
+//       tryDeepLink(deepLinkT7, () => {
+//     tryDeepLink(deepLinkT8, () => {
+//       tryDeepLink(deepLinkT9, () => {
+//     tryDeepLink(deepLinkT10, () => {
+//       tryDeepLink(deepLinkT11, () => {
+//     tryDeepLink(deepLinkT12, () => {
+//       window.location.replace(fallbackURL);
+//     });
+//   });
+//     });
+//   });
+//     });
+//   });
+//     });
+//   });
+//     });
+//   });
+//     });
+//   });
+// }
 
-        openTournamentApp();
+//         openTournamentApp();
+
+        alert('5');
+        window.location = 'worknest://www.tbank.ru/invest/projects?projectId=tournament';
+        fallbackLink = 'https://www.tbank.ru/invest/projects?projectId=tournament';
+        setTimeout(function () {
+            if (document.hasFocus()) {
+                window.location = fallbackLink;
+            }
+        }, 1000);
     </script>
 
     <h1>
