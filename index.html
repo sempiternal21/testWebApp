@@ -42,17 +42,26 @@
 
 <body>
     <script>
-        alert("Кнопка была нажата!");
-        window.location.replace(
-        "worknest://www.tbank.ru/invest/projects?projectId=tournament",
-        );
-        window.location.replace(
-        "https://www.tbank.ru/invest/projects?projectId=tournament",
-        );
-        window.location.replace(
-        "knightsmove://www.tbank.ru/invest/projects?projectId=tournament",
-        );
-        
+        alert("1");
+        function tryOpenApp(deepLink) {
+  const appURL = deepLink; // Например: myapp://open/somecontent
+  const fallbackURL = 'https://www.tbank.ru/invest/projects?projectId=tournament'; // Ссылка на App Store или веб-версию
+
+  const timeout = setTimeout(() => {
+    window.location = fallbackURL;
+  }, 1000); // Если приложение не открылось за 1 секунду — редиректим
+
+  window.location.replace(appURL);
+
+  // Для некоторых случаев может сработать window.location.href
+  // window.location.href = appURL;
+
+  // Защита от блокировки редиректа
+  window.addEventListener('pagehide', () => {
+    clearTimeout(timeout);
+  });
+}
+        tryOpenApp("knightsmove://www.tbank.ru/invest/projects?projectId=tournament");
     </script>
 
     <h1>
