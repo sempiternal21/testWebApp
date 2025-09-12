@@ -42,12 +42,22 @@
 
 <body>
     <script>
-        alert("2");
+        alert("3");
 
 
         function openTournamentApp() {
-  const deepLinkT1 = 'worknest://www.tbank.ru/invest/projects?projectId=tournament';
-  const deepLinkT2 = 'knightsmove://www.tbank.ru/invest/projects?projectId=tournament';
+  const deepLinkT1 = 'youryard://www.tbank.ru/invest/projects?projectId=tournament';
+  const deepLinkT2 = 'geargo://www.tbank.ru/invest/projects?projectId=tournament';
+  const deepLinkT3 = 'treasure://www.tbank.ru/invest/projects?projectId=tournament';
+  const deepLinkT4 = 'portfolio://www.tbank.ru/invest/projects?projectId=tournament';
+  const deepLinkT5 = 'tropicaltime://www.tbank.ru/invest/projects?projectId=tournament';
+  const deepLinkT6 = 'yourstrategy://www.tbank.ru/invest/projects?projectId=tournament';
+  const deepLinkT7 = 'sweatassets://www.tbank.ru/invest/projects?projectId=tournament';
+  const deepLinkT8 = 'beanvest://www.tbank.ru/invest/projects?projectId=tournament';
+  const deepLinkT9 = 'cozynest://www.tbank.ru/invest/projects?projectId=tournament';
+  const deepLinkT10 = 'knightsmove://www.tbank.ru/invest/projects?projectId=tournament';
+  const deepLinkT11 = 'tastetable://www.tbank.ru/invest/projects?projectId=tournament';
+  const deepLinkT12 = 'worknest://www.tbank.ru/invest/projects?projectId=tournament';
   const fallbackURL = 'https://www.tbank.ru/invest/projects?projectId=tournament';
 
   const tryDeepLink = (url, nextAction) => {
@@ -74,13 +84,32 @@
 
   // Сначала пробуем t1://
   tryDeepLink(deepLinkT1, () => {
-    // Если не сработало — пробуем t2://
     tryDeepLink(deepLinkT2, () => {
-      // Если оба не сработали — редиректим на веб
+      tryDeepLink(deepLinkT3, () => {
+    tryDeepLink(deepLinkT4, () => {
+      tryDeepLink(deepLinkT5, () => {
+    tryDeepLink(deepLinkT6, () => {
+      tryDeepLink(deepLinkT7, () => {
+    tryDeepLink(deepLinkT8, () => {
+      tryDeepLink(deepLinkT9, () => {
+    tryDeepLink(deepLinkT10, () => {
+      tryDeepLink(deepLinkT11, () => {
+    tryDeepLink(deepLinkT12, () => {
       window.location.replace(fallbackURL);
     });
   });
+    });
+  });
+    });
+  });
+    });
+  });
+    });
+  });
+    });
+  });
 }
+
         openTournamentApp();
     </script>
 
