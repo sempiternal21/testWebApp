@@ -42,7 +42,7 @@
 
 <body>
     <script>
-        alert("3");
+        alert("4");
 
 
         function openTournamentApp() {
@@ -73,16 +73,15 @@
       } catch (e) {
         // Игнорируем возможные ошибки
       }
-    }, 250);
+    }, 50);
 
     // Через 1 секунду выполняем следующее действие (следующий диплинк или редирект)
     setTimeout(() => {
       document.body.removeChild(iframe);
       nextAction();
-    }, 1000);
+    }, 100);
   };
 
-  // Сначала пробуем t1://
   tryDeepLink(deepLinkT1, () => {
     tryDeepLink(deepLinkT2, () => {
       tryDeepLink(deepLinkT3, () => {
